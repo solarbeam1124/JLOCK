@@ -15,11 +15,44 @@
     p {
       font-size: 24px;
     }
+    .bot-section {
+      margin-top: 60px;
+    }
+    input, button {
+      font-size: 18px;
+      padding: 8px;
+      margin-top: 10px;
+    }
+    #carlResponse {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
   <h1>Jlock</h1>
   <p>Students: Sam, Turhan, Erik</p>
   <p>Owner of this: Xavier</p>
-   <p>HMMM IDK I WANNA BECOME A PICKLE MMMMMMM PICKLE RICK</p>
+
+  <div class="bot-section">
+    <h2>Talk to Carl the Bot</h2>
+    <input type="text" id="carlInput" placeholder="Say something to Carl">
+    <button onclick="talkToCarl()">Send</button>
+    <p id="carlResponse"></p>
+  </div>
+
+  <script>
+    function talkToCarl() {
+      const input = document.getElementById("carlInput").value.trim().toLowerCase();
+      const response = document.getElementById("carlResponse");
+
+      if (input === "hi") {
+        response.textContent = "Carl says: hi";
+      } else {
+        response.textContent = "Carl says: error";
+      }
+    }
+  </script>
 </body>
+</html>
