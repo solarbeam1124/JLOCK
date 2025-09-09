@@ -1,68 +1,22 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Jlock & Carl</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      background-color: #f4f4f4;
-    }
-    .bot-section {
-      margin-top: 40px;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    input[type="text"] {
-      padding: 10px;
-      width: 60%;
-      font-size: 16px;
-      margin-right: 10px;
-    }
-    button {
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    #carlResponse {
-      margin-top: 20px;
-      font-weight: bold;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <title>Chat Platform</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <h1>Welcome to Jlock</h1>
-  <p>This is your site. Below, you can talk to Carl the Bot.</p>
-
-  <div class="bot-section">
-    <h2>Talk to Carl the Bot</h2>
-    <input type="text" id="carlInput" placeholder="Say something to Carl">
-    <button onclick="talkToCarl()">Send</button>
-    <p id="carlResponse"></p>
+  <div id="chat">
+    <h2>Chat Only</h2>
+    <ul id="messages"></ul>
+    <input id="messageInput" placeholder="Type a message..." />
+    <button onclick="sendMessage()">Send</button>
   </div>
 
-  <script>
-    function talkToCarl() {
-      const input = document.getElementById("carlInput").value.trim().toLowerCase();
-      const response = document.getElementById("carlResponse");
-
-      if (input === "hi") {
-        response.textContent = "Carl says: hi";
-      } else if (input === "how are you") {
-        response.textContent = "Carl says: I'm just code, but I'm doing great!";
-      } else if (input === "bye") {
-        response.textContent = "Carl says: Goodbye, friend!";
-      } else if (input === "do my taxes") {
-        response.textContent = "Carl says: hell nah";
-      } else {
-        response.textContent = "Carl says: error";
-      }
-    }
-  </script>
-
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
